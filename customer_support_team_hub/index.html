@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Support Team Hub</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">CS</div><div><b>Support Team Hub</b><small>TEAM OPERATIONS WORKSPACE</small></div></div>
+    <div class="workspace"><span class="dot"></span> Demo workspace <span class="chev">⌄</span></div>
+    <nav id="nav">
+      <button class="nav-item active" data-view="overview"><span>▦</span> Overview</button>
+      <button class="nav-item" data-view="agents"><span>♙</span> Agents</button>
+      <button class="nav-item" data-view="coaching"><span>◎</span> 1-on-1 Coaching</button>
+      <button class="nav-item" data-view="quality"><span>✓</span> Quality & Feedback</button>
+      <button class="nav-item" data-view="warnings"><span>⚑</span> Attendance & Warnings</button>
+      <button class="nav-item" data-view="schedules"><span>▤</span> Schedules</button>
+      <button class="nav-item" data-view="processes"><span>☷</span> Processes & SOPs</button>
+      <button class="nav-item" data-view="tools"><span>⌘</span> Tools & Access</button>
+      <button class="nav-item" data-view="client"><span>◇</span> Client Attention</button>
+      <button class="nav-item" data-view="reports"><span>▥</span> Reports</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="avatar">JM</div><div><b>Team Manager</b><small>Local demo account</small></div><span class="more">•••</span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="eyebrow">CUSTOMER OPERATIONS</div><h1 id="pageTitle">Overview</h1></div><div class="top-actions"><span class="today" id="today"></span><button class="btn btn-primary" id="quickAdd">＋ Add new</button></div></header>
+    <div class="content">
+      <section class="view active" id="view-overview">
+        <div class="welcome"><div><span class="eyebrow light">TEAM HEALTH AT A GLANCE</span><h2>Lead with clarity. Coach with purpose.</h2><p>Track people, performance, processes and client priorities in one place.</p></div><div class="welcome-art">✳</div></div>
+        <div class="metric-grid">
+          <article class="metric"><span>Active agents</span><b id="metricAgents">0</b><small>Team members in workspace</small></article>
+          <article class="metric"><span>Coaching sessions</span><b id="metricCoaching">0</b><small>Sessions logged</small></article>
+          <article class="metric"><span>Open attention items</span><b id="metricClient">0</b><small>Client decisions or support needed</small></article>
+          <article class="metric"><span>Open follow-ups</span><b id="metricFollow">0</b><small>Coaching and action items</small></article>
+        </div>
+        <div class="two-col">
+          <section class="card"><div class="section-head"><div><h3>Team snapshot</h3><p>Current agent status and focus areas</p></div><button class="text-btn" data-goto="agents">View agents →</button></div><div id="teamSnapshot" class="empty">Add agents to start building your team view.</div></section>
+          <section class="card"><div class="section-head"><div><h3>Needs attention</h3><p>Items requiring a manager or client response</p></div><button class="text-btn" data-goto="client">View all →</button></div><div id="attentionSnapshot" class="empty">No open items yet.</div></section>
+        </div>
+        <div class="two-col">
+          <section class="card"><div class="section-head"><div><h3>Upcoming coaching</h3><p>Next planned 1-on-1 sessions</p></div><button class="text-btn" data-goto="coaching">Open coaching →</button></div><div id="coachingSnapshot" class="empty">No coaching sessions scheduled.</div></section>
+          <section class="card"><div class="section-head"><div><h3>Manager reminders</h3><p>Good practices for a healthy support team</p></div></div><ul class="tips"><li>Review quality and customer outcomes—not ticket speed alone.</li><li>Coach privately, document factually and agree on next steps.</li><li>Escalate policy, product, refund or compliance decisions to the client.</li><li>Keep customer personal and payment information out of this tracker.</li></ul></section>
+        </div>
+      </section>
+
+      <section class="view" id="view-agents">
+        <div class="page-intro"><div><h2>Agents</h2><p>Maintain team profiles, roles, strengths and development needs.</p></div><button class="btn btn-primary" data-modal="agent">＋ Add agent</button></div>
+        <div class="toolbar"><input id="agentSearch" placeholder="Search agents..." /><select id="agentFilter"><option value="">All statuses</option><option>Active</option><option>Onboarding</option><option>On leave</option><option>Inactive</option></select></div>
+        <div class="table-wrap"><table><thead><tr><th>Agent</th><th>Role</th><th>Status</th><th>Strengths</th><th>Development focus</th><th></th></tr></thead><tbody id="agentsTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-coaching">
+        <div class="page-intro"><div><h2>1-on-1 Coaching</h2><p>Plan conversations, capture feedback and track agreed actions.</p></div><button class="btn btn-primary" data-modal="coaching">＋ Log session</button></div>
+        <div class="callout"><b>Suggested one-week support plan:</b> Day 1 assess and listen · Day 2 observe workflow · Day 3 coach/refresher · Day 4 guided practice · Day 5 review progress and agree next steps.</div>
+        <div class="table-wrap"><table><thead><tr><th>Date</th><th>Agent</th><th>Focus</th><th>Discussion / observations</th><th>Action & due date</th><th>Status</th><th></th></tr></thead><tbody id="coachingTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-quality">
+        <div class="page-intro"><div><h2>Quality & Feedback</h2><p>Record quality reviews, customer themes and coaching feedback.</p></div><button class="btn btn-primary" data-modal="quality">＋ Add review</button></div>
+        <div class="metric-grid compact"><article class="metric"><span>Reviews logged</span><b id="qualityCount">0</b></article><article class="metric"><span>Average QA score</span><b id="avgQA">—</b></article><article class="metric"><span>Positive feedback</span><b id="positiveCount">0</b></article></div>
+        <div class="callout">Suggested QA criteria: accuracy, empathy, ownership, completeness, brand tone, policy compliance and clear next steps. Define scoring with the client before using it for formal performance decisions.</div>
+        <div class="table-wrap"><table><thead><tr><th>Date</th><th>Agent</th><th>QA score</th><th>Feedback type</th><th>Observation / example</th><th>Next step</th><th></th></tr></thead><tbody id="qualityTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-warnings">
+        <div class="page-intro"><div><h2>Attendance & Warnings</h2><p>Document attendance concerns and formal performance steps objectively.</p></div><button class="btn btn-primary" data-modal="warning">＋ Record item</button></div>
+        <div class="callout caution"><b>Use carefully:</b> Record dates, observable facts, relevant policy and the agent's response. Follow the employer's HR process and local employment rules. This tracker is not a substitute for HR approval or a formal disciplinary system.</div>
+        <div class="table-wrap"><table><thead><tr><th>Date</th><th>Agent</th><th>Type</th><th>Factual summary</th><th>Action taken</th><th>Review date</th><th>Status</th><th></th></tr></thead><tbody id="warningsTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-schedules">
+        <div class="page-intro"><div><h2>Agent Schedules</h2><p>Track shifts, coverage windows, breaks and planned leave.</p></div><button class="btn btn-primary" data-modal="schedule">＋ Add shift</button></div>
+        <div class="callout">Confirm time zone, required coverage, break rules and schedule changes with the client. Avoid storing sensitive personal reasons for leave.</div>
+        <div class="table-wrap"><table><thead><tr><th>Date</th><th>Agent</th><th>Shift</th><th>Time zone</th><th>Break</th><th>Coverage / notes</th><th></th></tr></thead><tbody id="schedulesTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-processes">
+        <div class="page-intro"><div><h2>Processes & SOPs</h2><p>Keep team procedures, escalation paths and onboarding guides organized.</p></div><button class="btn btn-primary" data-modal="process">＋ Add process</button></div>
+        <div class="process-grid" id="processGrid"></div>
+      </section>
+
+      <section class="view" id="view-tools">
+        <div class="page-intro"><div><h2>Tools & Access</h2><p>Track platforms, owners, access status and training needs.</p></div><button class="btn btn-primary" data-modal="tool">＋ Add tool</button></div>
+        <div class="callout caution">Do not store passwords, API keys, recovery codes or customer data here. Use the company's approved password manager and access-control process.</div>
+        <div class="table-wrap"><table><thead><tr><th>Tool</th><th>Purpose</th><th>Owner</th><th>Access status</th><th>Training / notes</th><th></th></tr></thead><tbody id="toolsTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-client">
+        <div class="page-intro"><div><h2>Client Attention</h2><p>Track questions, blockers and decisions that need client input.</p></div><button class="btn btn-primary" data-modal="client">＋ Add request</button></div>
+        <div class="callout"><b>Escalate to client:</b> refund exceptions, policy changes, product or safety concerns, recurring fulfilment issues, pricing disputes, legal/compliance questions and access approvals.</div>
+        <div class="table-wrap"><table><thead><tr><th>Raised</th><th>Priority</th><th>Topic</th><th>Decision / support needed</th><th>Owner</th><th>Due</th><th>Status</th><th></th></tr></thead><tbody id="clientTable"></tbody></table></div>
+      </section>
+
+      <section class="view" id="view-reports">
+        <div class="page-intro"><div><h2>Reports & Team Stats</h2><p>Use verified data from your helpdesk and agreed reporting definitions.</p></div><button class="btn btn-secondary" id="exportBtn">↓ Export CSV</button></div>
+        <div class="metric-grid"><article class="metric"><span>Agents</span><b id="reportAgents">0</b><small>All profiles</small></article><article class="metric"><span>Coaching actions open</span><b id="reportActions">0</b><small>Not yet completed</small></article><article class="metric"><span>QA reviews</span><b id="reportReviews">0</b><small>Logged reviews</small></article><article class="metric"><span>Client items open</span><b id="reportClient">0</b><small>Awaiting resolution</small></article></div>
+        <div class="two-col"><section class="card"><h3>Performance metrics to track</h3><ul class="tips"><li>First response time (FRT)</li><li>Resolution time and first-contact resolution</li><li>Customer satisfaction (CSAT), with response count</li><li>Quality assurance score and review sample size</li><li>Backlog, reopen rate and escalation themes</li><li>Schedule adherence and coverage gaps</li></ul></section><section class="card"><h3>Reporting guardrails</h3><ul class="tips"><li>Always show the reporting period and data source.</li><li>Compare like-for-like ticket types and channels.</li><li>Never rank agents on speed without quality context.</li><li>Use small samples cautiously; explain limitations.</li><li>Share trends and recommended actions, not blame.</li></ul></section></div>
+      </section>
+      <footer>Support Team Hub · Demo workspace · Data is stored in this browser only</footer>
+    </div>
+  </main>
+</div>
+<div class="modal-backdrop" id="modalBackdrop"><div class="modal"><div class="modal-head"><div><span class="eyebrow">WORKSPACE ENTRY</span><h2 id="modalTitle">Add item</h2></div><button class="icon-btn" id="closeModal">✕</button></div><form id="entryForm"><div id="formFields" class="form-grid"></div><div class="modal-actions"><button type="button" class="btn btn-secondary" id="cancelModal">Cancel</button><button class="btn btn-primary" type="submit">Save entry</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="js/app.js"></script>
+</body></html>
